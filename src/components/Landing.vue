@@ -11,27 +11,31 @@
 <template>
     <main>
         <div class="placeholder_one">
-            <div class="na" data-aos="fade-right" data-aos-duration="1500">
-                <h3 class="name">Frantisek Bendik</h3>
-            </div><br>
             <div class="areas">
+                <div class="na" data-aos="fade-right" data-aos-duration="1500">
+                    <h3 class="name">Frantisek Bendik</h3>
+                </div><br>
                 <div class="one" data-aos="fade-right" data-aos-duration="2000">
                     <h1 class="first">Web Developer</h1><br>
                 </div>
-                <div class="cover1"
+                <!-- shinyEffect for cover1 also covers name section -->
+                <div 
+                    class="cover1"
                     @mouseover="shinyEffect"
                     @mouseleave="landingAnimationOut"
                 ></div>
                 <h1 class="second" data-aos="fade-right" data-aos-duration="2500">Graphic Designer</h1><br>
-                <div class="cover2"
-                @mouseover="shinyEffect2"
+                <div 
+                    class="cover2"
+                    @mouseover="shinyEffect2"
                     @mouseleave="landingAnimationOutTwo"
                 ></div>
                 <h1 class="third" data-aos="fade-right" data-aos-duration="2900">Frontend Programmer</h1><br>
-                <div class="cover3"
-                @mouseover="shinyEffect3"
-                @mouseleave="landingAnimationOutThree"
-                    ></div>
+                <div 
+                    class="cover3"
+                    @mouseover="shinyEffect3"
+                    @mouseleave="landingAnimationOutThree"
+                ></div>
             </div>
             <button class="buttonCV" data-aos="fade" data-aos-duration="1000"><a class="linkCV" href="#cv">Skip to CV</a></button>
         </div>
@@ -106,7 +110,7 @@ export default{
         float: left;
         margin-left: 20px;
         height: 60px;
-        top: 50px;
+        top: 40px;
     }
     .name{
         font-family: Oxygen, sans-serif;
@@ -122,8 +126,9 @@ export default{
         z-index: 1;
     }
     .one{
-         position: relative; 
+        position: relative; 
         top: 20px;
+        right: 19.5%;
         float: left;
         font-weight: 400;
     }
@@ -168,7 +173,7 @@ export default{
     }
     .third{
         position: relative;
-        top: 60px;
+        top: 50px;
         left: 200px;
         font-weight: 400;
     }

@@ -1,11 +1,5 @@
 <!--Comment section
 
-- it seems to be working now 
-- image shows on specified position
-- it could still be changed to follow the mouse???
-@mousemove.self in the links is not necessary - it will work the same without it
-but maybe it can be used to make the image follow mouse??
-
 -->
 
 
@@ -19,25 +13,26 @@ but maybe it can be used to make the image follow mouse??
                 <div 
                     data-aos="fade-left" data-aos-duration="2000"
                     @mouseenter="showImageOne = true"
-                    @mousemove.self="getImage($event)"
                     @mouseleave="showImageOne = false"
-                 class="eaaa">
+                    class="eaaa">
                     <p>Erhvervsakademi Aarhus</p>
                     <h3 class="wd">BA Top-Up Web Development (2019-2021)</h3>
-                    <img class="firstImage" v-show="showImageOne" src="../assets/imgs/eaaaimg.jpeg" :style="{ left: page.left + 'px', top: page.top + 'px'}" /> 
+                    <transition name="eaaa_image_one">
+                        <img class="firstImage" v-show="showImageOne" src="../assets/imgs/eaaaimg.jpeg"/> 
+                    </transition>
                 </div>
             </a>
             <a href="https://www.easv.dk/da/uddannelser/multimediedesigner/" target="_blank">
                 <div
                     data-aos="fade-left" data-aos-duration="2000"
                     @mouseenter="showImageTwo = true"
-                    @mousemove.self="getImage($event)"
                     @mouseleave="showImageTwo = false"
                  class="easv">
                     <p>Erhvervsakademi Sydvest (Esbjerg)</p>
                     <h3 class="wd">AP Multimedia Design (2017-2019)</h3>
-                    <img class="secondImage" v-show="showImageTwo" src="../assets/imgs/easvimg.jpeg" :style="{ left: page.left + 'px', top: page.top + 'px'}"/> 
-
+                    <transition name="easv_image_two">
+                        <img class="secondImage" v-show="showImageTwo" src="../assets/imgs/easvimg.jpeg"/> 
+                    </transition>
                 </div>
             </a>
         </div>
@@ -59,10 +54,6 @@ export default {
         return {
             showImageOne: false,
             showImageTwo: false,
-            page:{
-                left: 0,
-                top: 0
-            },
         }
     },
     methods:{
@@ -148,5 +139,21 @@ export default {
     .wd{
         font-size: 0.7em;
         color: black;
+    }
+    .eaaa_image_one-enter-active,
+    .eaaa_image_one-leave-active{
+        transition: opacity .8s ease
+    }
+    .eaaa_image_one-enter-from,
+    .eaaa_image_one-leave-to{
+        opacity: 0;   
+    }
+    .easv_image_two-enter-active,
+    .easv_image_two-leave-active{
+        transition: opacity .8s ease
+    }
+    .easv_image_two-enter-from,
+    .easv_image_two-leave-to{
+        opacity: 0;   
     }
 </style>

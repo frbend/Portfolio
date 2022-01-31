@@ -20,7 +20,9 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 
 
-//TODO: subpage for japanese translations and repair exhibit
+
+//TODO: write descriptions for tooltips
+//TODO: footer hover element -- same as tooltips in work component
 //TODO: rename sections in landing and make them center even if zoomed in/out
 
 export default {
@@ -49,7 +51,7 @@ export default {
   color: #2A3250;
   margin-top: 60px;
 }
-  a:visited{
+  a:visited, a:link{
         color: #2A3250;
   }
 </style>
