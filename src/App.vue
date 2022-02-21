@@ -20,8 +20,6 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 
 
-//TODO: subpage for japanese translations and repair exhibit
-//TODO: rename sections in landing and make them center even if zoomed in/out
 
 export default {
   name: 'App',
@@ -49,7 +47,7 @@ export default {
   color: #2A3250;
   margin-top: 60px;
 }
-  a:visited{
+  a:link, a:visited{
         color: #2A3250;
   }
 </style>

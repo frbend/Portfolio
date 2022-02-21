@@ -1,11 +1,4 @@
 <!--Comment section
-
-- it seems to be working now 
-- image shows on specified position
-- it could still be changed to follow the mouse???
-@mousemove.self in the links is not necessary - it will work the same without it
-but maybe it can be used to make the image follow mouse??
-
 -->
 
 
@@ -19,25 +12,26 @@ but maybe it can be used to make the image follow mouse??
                 <div 
                     data-aos="fade-left" data-aos-duration="2000"
                     @mouseenter="showImageOne = true"
-                    @mousemove.self="getImage($event)"
                     @mouseleave="showImageOne = false"
-                 class="eaaa">
+                    class="eaaa">
                     <p>Erhvervsakademi Aarhus</p>
                     <h3 class="wd">BA Top-Up Web Development (2019-2021)</h3>
-                    <img class="firstImage" v-show="showImageOne" src="../assets/imgs/eaaaimg.jpeg" :style="{ left: page.left + 'px', top: page.top + 'px'}" /> 
+                    <transition name="eaaa-image-one">
+                        <img class="firstImage" v-show="showImageOne" src="../assets/imgs/eaaaimg.jpeg"/> 
+                    </transition>
                 </div>
             </a>
             <a href="https://www.easv.dk/da/uddannelser/multimediedesigner/" target="_blank">
                 <div
                     data-aos="fade-left" data-aos-duration="2000"
                     @mouseenter="showImageTwo = true"
-                    @mousemove.self="getImage($event)"
                     @mouseleave="showImageTwo = false"
                  class="easv">
                     <p>Erhvervsakademi Sydvest (Esbjerg)</p>
                     <h3 class="wd">AP Multimedia Design (2017-2019)</h3>
-                    <img class="secondImage" v-show="showImageTwo" src="../assets/imgs/easvimg.jpeg" :style="{ left: page.left + 'px', top: page.top + 'px'}"/> 
-
+                    <transition name="easv-image-two">
+                        <img class="secondImage" v-show="showImageTwo" src="../assets/imgs/easvimg.jpeg"/> 
+                    </transition>
                 </div>
             </a>
         </div>
@@ -47,9 +41,6 @@ but maybe it can be used to make the image follow mouse??
 </template>
 
 <script>
-
-
-
 export default {
     name: 'aa',
     props:{
@@ -59,10 +50,6 @@ export default {
         return {
             showImageOne: false,
             showImageTwo: false,
-            page:{
-                left: 0,
-                top: 0
-            },
         }
     },
     methods:{
@@ -72,7 +59,6 @@ export default {
         getImage(event){
             this.page.left = event.pageX;
             this.page.top = event.pageY;
-            //console.log("X:" + event.clientX +" "+"Y:" + event.clientY + " " +this.showImage)
         },
         loadImage(){
             this.isLoaded = true
@@ -80,10 +66,6 @@ export default {
         }
     }
 }
-
-
-//gsap.to(".diplomas", {duration: 2, scale: 0.5})
-
 </script>
 
 
@@ -148,5 +130,21 @@ export default {
     .wd{
         font-size: 0.7em;
         color: black;
+    }
+    .eaaa-image-one-enter-active,
+    .eaaa-image-one-leave-active{
+        transition: opacity .8s ease
+    }
+    .eaaa-image-one-enter-from,
+    .eaaa-image-one-leave-to{
+        opacity: 0;   
+    }
+    .easv-image-two-enter-active,
+    .easv-image-two-leave-active{
+        transition: opacity .8s ease
+    }
+    .easv-image-two-enter-from,
+    .easv-image-two-leave-to{
+        opacity: 0;   
     }
 </style>
