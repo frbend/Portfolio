@@ -1,8 +1,8 @@
 <template>
     <main>
         <div class="placeholder_four">
-            <div class="containerrr">
-                <h1 class="comp"
+            <div class="container-three">
+                <h1 class="competencies"
                     data-aos="fade-left" data-aos-duration="1500"
                 >Competencies</h1>
                 <div class="frontend">
@@ -33,10 +33,10 @@
         height: 800px;
         clear: both;
     }
-    .comp{
+    .competencies{
         font-size: 5em;
     }
-    .containerrr{
+    .container-three{
         position: relative;
         top: 100px;
         float: left;

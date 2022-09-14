@@ -21,10 +21,6 @@ import 'aos/dist/aos.css'
 
 
 
-//TODO: write descriptions for tooltips
-//TODO: footer hover element -- same as tooltips in work component
-//TODO: rename sections in landing and make them center even if zoomed in/out
-
 export default {
   name: 'App',
   mounted(){
@@ -51,7 +47,7 @@ export default {
   color: #2A3250;
   margin-top: 60px;
 }
-  a:visited, a:link{
+  a:link, a:visited{
         color: #2A3250;
   }
 </style>

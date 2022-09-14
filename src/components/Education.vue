@@ -1,5 +1,4 @@
 <!--Comment section
-
 -->
 
 
@@ -17,7 +16,7 @@
                     class="eaaa">
                     <p>Erhvervsakademi Aarhus</p>
                     <h3 class="wd">BA Top-Up Web Development (2019-2021)</h3>
-                    <transition name="eaaa_image_one">
+                    <transition name="eaaa-image-one">
                         <img class="firstImage" v-show="showImageOne" src="../assets/imgs/eaaaimg.jpeg"/> 
                     </transition>
                 </div>
@@ -30,7 +29,7 @@
                  class="easv">
                     <p>Erhvervsakademi Sydvest (Esbjerg)</p>
                     <h3 class="wd">AP Multimedia Design (2017-2019)</h3>
-                    <transition name="easv_image_two">
+                    <transition name="easv-image-two">
                         <img class="secondImage" v-show="showImageTwo" src="../assets/imgs/easvimg.jpeg"/> 
                     </transition>
                 </div>
@@ -42,9 +41,6 @@
 </template>
 
 <script>
-
-
-
 export default {
     name: 'aa',
     props:{
@@ -63,7 +59,6 @@ export default {
         getImage(event){
             this.page.left = event.pageX;
             this.page.top = event.pageY;
-            //console.log("X:" + event.clientX +" "+"Y:" + event.clientY + " " +this.showImage)
         },
         loadImage(){
             this.isLoaded = true
@@ -71,10 +66,6 @@ export default {
         }
     }
 }
-
-
-//gsap.to(".diplomas", {duration: 2, scale: 0.5})
-
 </script>
 
 
@@ -140,20 +131,20 @@ export default {
         font-size: 0.7em;
         color: black;
     }
-    .eaaa_image_one-enter-active,
-    .eaaa_image_one-leave-active{
+    .eaaa-image-one-enter-active,
+    .eaaa-image-one-leave-active{
         transition: opacity .8s ease
     }
-    .eaaa_image_one-enter-from,
-    .eaaa_image_one-leave-to{
+    .eaaa-image-one-enter-from,
+    .eaaa-image-one-leave-to{
         opacity: 0;   
     }
-    .easv_image_two-enter-active,
-    .easv_image_two-leave-active{
+    .easv-image-two-enter-active,
+    .easv-image-two-leave-active{
         transition: opacity .8s ease
     }
-    .easv_image_two-enter-from,
-    .easv_image_two-leave-to{
+    .easv-image-two-enter-from,
+    .easv-image-two-leave-to{
         opacity: 0;   
     }
 </style>

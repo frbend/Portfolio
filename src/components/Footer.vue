@@ -1,20 +1,22 @@
 <template>
     <main>
-        <div class="foot_container">
+        <div class="footer_container">
                 <h1 class="head1">Connect</h1>
             <div class="connect">
-            <button class="cvButton"><a id="cv" href="./Frantisek_Bendik_CV.pdf" target="_blank">Get my CV</a></button>
-                <a href="mailto:frantabendik@gmail..com"><img class="img1" src="../assets/imgs/email.png" alt=""></a>
-                <a href="https://www.linkedin.com/in/frantisek-bendik-478a94172/" target="_blank"><img class="img2" src="../assets/imgs/linkedin2.png" alt=""></a>
-                <a class="linkThree" href="https://github.com/frbend?tab=repositories" target="_blank"><img class="img3" src="../assets/imgs/github2.png" alt=""></a>
+                <button class="cv-button"><a id="cv" href="./Frantisek_Bendik_CV.pdf" target="_blank">Get my CV</a></button>
+                <div class="social-links">
+                    <a href="mailto:frantabendik@gmail..com"><img class="img1" src="../assets/imgs/email.png" alt=""></a>
+                    <a href="https://www.linkedin.com/in/frantisek-bendik-478a94172/" target="_blank"><img class="img2" src="../assets/imgs/linkedin2.png" alt=""></a>
+                    <a class="link-three" href="https://github.com/frbend?tab=repositories" target="_blank"><img class="img3" src="../assets/imgs/github2.png" alt=""></a>
+                </div>
             </div><br>
-            <div>
+            <div class="copyright-tools">
                     <p>©Portfolio 2022 | Designed and developed by me 
                     <a class="info"
                        @mouseenter="usedTools = true" 
                        @mouseleave="usedTools = false"
                        > info</a></p>
-                <transition name="footer_tooltip">
+                <transition name="footer-tooltip">
                     <div class="tools"
                          v-show="usedTools"> 
                         <h1>Tools used</h1>
@@ -62,8 +64,6 @@
 </template>
 
 <script>
-
-
 export default {
     name: 'footer',
     components:{
@@ -83,11 +83,11 @@ export default {
 
 
 <style>
-    .foot_container{
-        border-top: 1px solid #2A3250;
+    .footer_container{
+        border-top: 1px solid #2A3250; 
+        position: relative;
         height: 160px;
     }
-
     .tools{
         float: right;
         text-align: left;
@@ -131,16 +131,14 @@ export default {
         cursor: pointer;
         text-decoration: underline;
     }
-
     .connect{
         clear: both;
         position: relative;
     }
-
     .connect a{
         float: right;
     }
-    .cvButton{
+    .cv-button{
         text-transform: uppercase;
         background-color: #2A3250;
         color: white;
@@ -149,18 +147,17 @@ export default {
         border: none;
         border-radius: 13px;
         padding: 0 10px 0 10px;
-        transform: translate(45%, 0%)
     }
-    .cvButton a{
+    .cv-button a{
         margin: 0 12%;
     }
-    .cvButton a:visited{
+    .cv-button a:visited{
         color: white;
     }
-    .cvButton a:link{
+    .cv-button a:link{
         color: white
     }
-    .cvButton:hover{
+    .cv-button:hover{
         background-color: rgb(68, 100, 214);
         transition: 1s;
     }
@@ -179,14 +176,66 @@ export default {
     .connect a{
         text-decoration: none;
     }
-    .footer_tooltip-enter-active,
-    .footer_tooltip-leave-active{
+    .footer-tooltip-enter-active,
+    .footer-tooltip-leave-active{
         transition: opacity .8s ease
     }
-    .footer_tooltip-enter-from,
-    .footer_tooltip-leave-to{
+    .footer-tooltip-enter-from,
+    .footer-tooltip-leave-to{
         opacity: 0;   
     }
+    .social-links{
+        transform: translate(0px, -40px);
+    }
+    .copyright-tools{
+        width: 460px;
+        margin-left: 410px;
+    }
 
+        /* Extra small devices (phones, 600px and down) */
+    @media only screen and (min-width: 320px) and (max-width: 600px) {
+        .footer_container{
+            width: 1090px;
+            height: 230px;
+        }
+        .copyright-tools{
+            position: absolute; 
+            top: 200px;
+            right: 300px;
+        }
+        .social-links{
+            position: absolute;
+            transform: translate(490px, 30px);
+        }
+        .cv-button{
+            width: 200px;
+        }
+        #cv{
+            position: absolute;
+            margin: -7px 50px 0px -35px;
+            text-align: center;
+        }
 
+    }
+        /*tablets and small laptops*/ 
+    @media only screen and (min-width: 760px) and (max-width: 1024px){
+        .footer_container{
+            width: 1090px;
+        }
+        .social-links{
+            position: absolute;
+            transform: translate(950px, -40px);
+        }
+        .copyright-tools{
+            position: absolute;
+            right: 310px;
+        }
+    }
+            /*4K screens*/ 
+    @media only screen and (min-width: 2560px) and (max-width: 2600px){
+        .copyright-tools{
+            position: absolute;
+            left: 630px;
+        }
+    }
 </style>

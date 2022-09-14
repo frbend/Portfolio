@@ -1,19 +1,18 @@
 <!--
-
 -->
 
 
 <template>
     <main>
         <div class="placeholder_three">
-            <div class="containerr">
-                <h1 class="work_exp" data-aos="fade-right" data-aos-duration="1500">Previous work</h1>
-                <h1 class="free" data-aos="fade-right" data-aos-duration="2000">Freelance</h1><br>
+            <div class="container-two">
+                <h1 class="work-exp" data-aos="fade-right" data-aos-duration="1500">Previous work</h1>
+                <h1 class="freelance-heading" data-aos="fade-right" data-aos-duration="2000">Freelance</h1><br>
                 <div class="freelance">
-                    <div class="jap_translations"
+                    <div class="jap-translations"
                         data-aos="fade-right" data-aos-duration="2000">
                         <a
-                            class="aa" 
+                            class="jap-translations-link" 
                             href="http://en.japonstina-tlumoceni.cz" 
                             target="_blank"
                             @mouseenter="showText1 = true"
@@ -23,21 +22,21 @@
                             >Japanese Translations 
                         </a>
                         <a 
-                            class="right_arrow"
+                            class="right-arrow"
                             href="http://en.japonstina-tlumoceni.cz" 
                             target="_blank"
                             @mouseover="rotateArrow"
                             @mouseleave="rotateArrowBack">&rarr;
                         </a><br>
                     </div>
-                        <transition name="jap_translation_tooltip1">
+                        <transition name="jap-translation-tooltip1">
                             <p v-show="showText1"
                             class="tooltip1">Freelancing paid project to create and maintain a WordPress website for an independent translator.</p> 
                         </transition>   
-                    <div class="repair_exhibit"
+                    <div class="repair-exhibit"
                          data-aos="fade-right" data-aos-duration="2500">
                         <a 
-                            class="aaa"
+                            class="repair-exhibit-link"
                             href="" 
                             @mouseenter="showText2 = true"
                             @mouseleave="showText2 = false"
@@ -46,13 +45,13 @@
                             >Repair Exhibit
                         </a>
                             <a 
-                            class="right_arrow2"
+                            class="right-arrow2"
                             href="" 
                             @mouseover="rotateArrow2"
                             @mouseleave="rotateArrow2Back">&rarr;
                         </a>
                     </div>
-                        <transition name="repair_tooltip2">
+                        <transition name="repair-tooltip2">
                             <p v-show="showText2"
                             class="tooltip2">Short term paid project in collaboration with anthropology department of Aarhus University to create an online art exhibition due to covid shutdown.</p> 
                         </transition>   
@@ -62,7 +61,7 @@
                     <h1 data-aos="fade-left" data-aos-duration="1500"
                         >Bachelor's degree project
                     </h1>
-                    <div class="voice_controlled_app"
+                    <div class="voice-controlled-app"
                          data-aos="fade-left" data-aos-duration="2500">
                         <a 
                             class="desc"
@@ -75,14 +74,14 @@
                             >Voice controlled shopping list <br>Application (Javascript,html,css)
                         </a>
                         <a 
-                            class="left_arrow"
+                            class="left-arrow"
                             href="https://frbend-voice-list.netlify.app/"
                             target="_blank"
                             @mouseover="rotateArrow3"
                             @mouseleave="rotateArrow3Back">&rarr;
                         </a>
                     </div>
-                        <transition name="voice_control_tooltip3">
+                        <transition name="voice-control-tooltip3">
                                 <p v-show="showText3"
                                 class="tooltip3">Voice controlled shopping list application prototype. 
                                 The goal was to show how Føtex plus app shopping list section could be optimised
@@ -94,11 +93,11 @@
                     -->
                 </div>
                 <div class="internship">
-                    <h1 class="multi"
+                    <h1 class="multimedia"
                         data-aos="fade-left" data-aos-duration="1500"
                         >Multimedia design internship
                     </h1>
-                    <div class="kayor_group_internship"
+                    <div class="kayor-group-internship"
                          data-aos="fade-left" data-aos-duration="2500">
                         <a 
                            class="desc"
@@ -109,12 +108,12 @@
                            @mouseout="rotateArrow4Back"
                            >Kayor group
                         </a>
-                        <a class="left_arrow2"
+                        <a class="left-arrow2"
                             @mouseover="rotateArrow4"
                             @mouseleave="rotateArrow4Back">&rarr;
                         </a>
                     </div>
-                        <transition name="kayor_group_tooltip4">
+                        <transition name="kayor-group-tooltip4">
                             <p v-show="showText4"
                             class="tooltip4">Internship under a startup company. The tasks included:
                             design social media profile and cover pictures, design and rework of new logo,
@@ -122,7 +121,7 @@
                       </transition> 
 
                 </div>
-                <div class="other_work">
+                <div class="other-work">
                     <h1 data-aos="fade-right" data-aos-duration="1500">Other positions</h1>
                     <h1 data-aos="fade-right" data-aos-duration="1500">Student jobs</h1>
                     <div class="faust">
@@ -149,10 +148,7 @@
 </template>
 
 <script>
-
 import gsap from "gsap";
-
-
 export default {
     name: 'work',
     props:{
@@ -167,52 +163,50 @@ export default {
     },
     methods:{
         rotateArrow(){
-            gsap.to(".right_arrow",{rotate:-25, duration: 0.1})
+            gsap.to(".right-arrow",{rotate:-25, duration: 0.1})
         },
         rotateArrowBack(){
-            gsap.to(".right_arrow",{rotate: 0, duration: 0.1})
+            gsap.to(".right-arrow",{rotate: 0, duration: 0.1})
         },
         rotateArrow2(){
-            gsap.to(".right_arrow2",{rotate:-25, duration: 0.1})
+            gsap.to(".right-arrow2",{rotate:-25, duration: 0.1})
         },
         rotateArrow2Back(){
-            gsap.to(".right_arrow2",{rotate: 0, duration: 0.2})
+            gsap.to(".right-arrow2",{rotate: 0, duration: 0.2})
         },
         rotateArrow3(){
-            gsap.to(".left_arrow",{rotate:-25, duration: 0.1})
+            gsap.to(".left-arrow",{rotate:-25, duration: 0.1})
         },
         rotateArrow3Back(){
-            gsap.to(".left_arrow",{rotate: 0, duration: 0.2})
+            gsap.to(".left-arrow",{rotate: 0, duration: 0.2})
         },
         rotateArrow4(){
-            gsap.to(".left_arrow2",{rotate:-25, duration: 0.1})
+            gsap.to(".left-arrow2",{rotate:-25, duration: 0.1})
         },
         rotateArrow4Back(){
-            gsap.to(".left_arrow2",{rotate: 0, duration: 0.2})
+            gsap.to(".left-arrow2",{rotate: 0, duration: 0.2})
         }
     }
 }
-
-
 </script>
 
 
 
 <style>
     .placeholder_three{
-        height: 800px;
+        height: 1500px;
     }
-    .containerr{
+    .container-two{
         float: right;
         margin-right: 20px;
         margin-top: 10%;
         height: 500px;
     }
-    .work_exp{
+    .work-exp{
         font-size: 5em;
         width: 700px;
     }
-    .free{
+    .freelance-heading{
         width: 220px;
         float: right;
         margin-right: 20px;
@@ -226,12 +220,10 @@ export default {
         top: 100px;
         left: 200px;
     }
-
-    .aa, .aaa{
+    .jap-translations-link, .repair-exhibit-link{
         font-size: 1.7em;
         font-weight: 700;
         line-height: 100px;
-
     }
     .tooltip {
         position: absolute!important;
@@ -245,9 +237,9 @@ export default {
         text-decoration: none;
         color: black;
     }
-    .freelance a:hover, .freelance .right_arrow:hover, .freelance .right_arrow:hover,
-    .left_arrow:hover, .left_arrow2:hover, .desc:hover, .aa:hover ~ .right_arrow,
-    .aaa:hover ~ .right_arrow2, .desc:hover ~ .left_arrow, .desc:hover ~.left_arrow2{
+    .freelance a:hover, .freelance .right-arrow:hover, .freelance .right-arrow:hover,
+    .left-arrow:hover, .left-arrow2:hover, .desc:hover, .aa:hover ~ .right-arrow,
+    .repair-exhibit-link:hover ~ .right-arrow2, .desc:hover ~ .left-arrow, .desc:hover ~.left-arrow2{
         color: lightblue;
         transition: 0.3s;
     }
@@ -261,7 +253,7 @@ export default {
         font-size: 1.5em;
         font-weight: 500;
     }
-    .multi{
+    .multimedia{
         width: 780px;
     }
     .desc{
@@ -274,8 +266,10 @@ export default {
         font-weight: 700;
         font-size: 1em;
     }
-    .other_work{
+    .other-work{
         position: relative;
+        height: 500px;
+        width: 480px;
         top: 100px;
         float: right;
         text-align: right;
@@ -286,30 +280,31 @@ export default {
         right: 50px;
         margin-bottom: 30px;
         line-height: 10px;
+        width: 500px;
     }
     .position{
         color: black;
     }
-    .jap_translations, .repair_exhibit{
+    .jap-translations, .repair-exhibit{
         width: 420px;
         height: 100px;
         text-align: left;
         position: relative;
     }
-    .right_arrow, .right_arrow2, .left_arrow, .left_arrow2{
+    .right-arrow, .right-arrow2, .left-arrow, .left-arrow2{
         font-size: 80px;
         height: 100px;
         position: absolute;
         margin: -2px 0px 0px 50px;
     }
-    .right_arrow2{
+    .right-arrow2{
         margin: -2px 0px 0px 180px;
     }
-    .left_arrow{
+    .left-arrow{
         margin: -25px 0 0 0;
         text-decoration: none;
     }
-    .left_arrow2{
+    .left-arrow2{
         margin: -30px 0 0 130px;
     }
     .tooltip1{
@@ -341,38 +336,64 @@ export default {
         height: 150px;
         
     }
-    .jap_translation_tooltip1-enter-active,
-    .jap_translation_tooltip1-leave-active{
+    .jap-translation-tooltip1-enter-active,
+    .jap-translation-tooltip1-leave-active{
         transition: opacity .8s ease
     }
-    .jap_translation_tooltip1-enter-from,
-    .jap_translation_tooltip1-leave-to{
+    .jap-translation-tooltip1-enter-from,
+    .jap-translation-tooltip1-leave-to{
         opacity: 0;   
     }
-    .repair_tooltip2-enter-active,
-    .repair_tooltip2-leave-active{
+    .repair-tooltip2-enter-active,
+    .repair-tooltip2-leave-active{
         transition: opacity .8s ease
     }
-    .repair_tooltip2-enter-from,
-    .repair_tooltip2-leave-to{
+    .repair-tooltip2-enter-from,
+    .repair-tooltip2-leave-to{
         opacity: 0;   
     }
-    .voice_control_tooltip3-enter-active,
-    .voice_control_tooltip3-leave-active{
+    .voice-control-tooltip3-enter-active,
+    .voice-control-tooltip3-leave-active{
         transition: opacity .8s ease
     }
-    .voice_control_tooltip3-enter-from,
-    .voice_control_tooltip3-leave-to{
+    .voice-control-tooltip3-enter-from,
+    .voice-control-tooltip3-leave-to{
         opacity: 0;   
     }
-    .kayor_group_tooltip4-enter-active,
-    .kayor_group_tooltip4-leave-active{
+    .kayor-group-tooltip4-enter-active,
+    .kayor-group-tooltip4-leave-active{
         transition: opacity .8s ease
     }
-    .kayor_group_tooltip4-enter-from,
-    .kayor_group_tooltip4-leave-to{
+    .kayor-group-tooltip4-enter-from,
+    .kayor-group-tooltip4-leave-to{
         opacity: 0;   
     }
-
-
+     @media only screen and (min-width: 320px) and (max-width: 600px) {
+         .other-work{
+             float: left;
+             margin-left: 150vw;
+         }
+         .freelance-heading, .freelance, .jap-translations, .repair-exhibit, .container-two{
+             float: left;
+         }
+         .freelance{
+             margin-left: -400px;
+         }
+         .freelance-heading{
+             margin-left: 25px;
+         }
+     }
+         /*tablets*/ 
+    @media only screen and (min-width: 760px) and (max-width: 768px){
+        .other-work{
+            margin-right: -300px;
+        }
+         .freelance-heading, .freelance{
+             float: left;
+             margin-left: 25px;
+         }
+         .jap-translations, .repair-exhibit{
+              margin-left: -460px;
+          }
+    }
 </style>
